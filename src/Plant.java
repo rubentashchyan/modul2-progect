@@ -7,8 +7,6 @@ public class Plant implements Eatable, Entity {
         this.foodLevel = foodLevel;
     }
 
-
-
     public int getFoodLevel() {
         return foodLevel;
     }

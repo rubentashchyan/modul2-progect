@@ -34,7 +34,7 @@ public  class Animal  implements Eatable, Entity {
 
 
 
-    // TODO переписать логику в сервису
+
 
 
 

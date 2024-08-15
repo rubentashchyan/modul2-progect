@@ -14,7 +14,7 @@ public class FoodThread implements Runnable{
                     if (entity instanceof Animal){
                         Animal animal = (Animal) entity;
                         service.eat(island, animal);
-                        service.FoodLevelMinus(animal);
+                        service.foodLevelMinus(animal);
                     }
 
                 }

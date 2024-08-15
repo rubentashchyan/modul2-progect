@@ -16,7 +16,8 @@ public class Island {
         island = new Entity[row][col];
     }
 
-    public void generateAnimals(int quantity) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
+    public void generateAnimals(int quantity) throws InvocationTargetException, NoSuchMethodException
+            , InstantiationException, IllegalAccessException {
         if(quantity <= 0){
             throw new IllegalArgumentException(" количество животных должно быть больше 0");
         }

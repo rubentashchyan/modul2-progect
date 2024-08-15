@@ -4,12 +4,14 @@ import java.lang.reflect.InvocationTargetException;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) throws InvocationTargetException, NoSuchMethodException, InstantiationException, IllegalAccessException {
-       Island island = new Island(20, 20);
+       Island island = new Island(10, 10);
 
-             AnimalThread thread = new AnimalThread(island);
-             thread.run();
+
              FoodThread foodThread = new FoodThread(island);
-             foodThread.run();
+             new Thread(foodThread).start();
+             ReproductionThread reproductionthread = new ReproductionThread(island);
+             new Thread(reproductionthread).start();
+
    }
 
 }

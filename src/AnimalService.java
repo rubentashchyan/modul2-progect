@@ -1,5 +1,5 @@
 public class AnimalService {
-    public void FoodLevelMinus(Animal animal) {
+    public void foodLevelMinus(Animal animal) {
         if (animal.getFoodLevel() < 0) {
             animal.setFoodLevel(animal.getFoodLevel()-1);
         } else if (animal.getFoodLevel() == 0) {

@@ -8,8 +8,6 @@ public class Bear extends Predator{
     }
 
 
-
-
     public Animal reproduction(Bear bear){
         if(bear.equals(bear)){
             return new Bear();

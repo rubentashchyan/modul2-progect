@@ -2,19 +2,20 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Random;
 
 
-public class AnimalThread implements Runnable {
+public class PopulationService {
 
     AnimalFactory factory = new AnimalFactory();
     PlantFactory plantFactory = new PlantFactory();
 
     private  Island island;
 
-    public AnimalThread(Island island) {
+    public PopulationService(Island island) {
        this.island = island;
     }
     AnimalService service = new AnimalService();
+    // TODO тестировать движение, после питание, а после него размножение
 
-    public void run() {
+    public void populateIsland() {
         int i = 0;
         while (i <= 16) {
             i++;
