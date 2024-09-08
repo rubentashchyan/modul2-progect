@@ -1,3 +1,7 @@
+package Service;
+
+import Model.Entity.Plant;
+
 public class PlantFactory {
 
     public PlantFactory() {

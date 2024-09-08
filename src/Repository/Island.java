@@ -1,3 +1,10 @@
+package Repository;
+
+import Interfaces.Entity;
+import Model.Entity.Animal;
+import Model.Entity.Bear;
+import Model.Entity.Plant;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.Random;
@@ -6,7 +13,7 @@ import java.util.Random;
 public class Island {
 
     private Entity[][] island;
-    private AnimalFactory factory = new AnimalFactory();
+
 
     public Entity[][] getIsland() {
         return island;
@@ -16,26 +23,37 @@ public class Island {
         island = new Entity[row][col];
     }
 
-    public void generateAnimals(int quantity) throws InvocationTargetException, NoSuchMethodException
-            , InstantiationException, IllegalAccessException {
-        if(quantity <= 0){
-            throw new IllegalArgumentException(" количество животных должно быть больше 0");
-        }
-        if (quantity > island.length * island[0].length){
-            throw new IllegalArgumentException("недопустимая величина");
-        }
-        for (int i = 0; i < quantity; i++) {
-            Random random = new Random();
-            int r = random.nextInt(island.length);
-            int c = random.nextInt(island[0].length);
-            if (island[r][c] == null){
-              addAnimal(r, c, factory.createAnimal() ) ;
+//    public void generateAnimals(int quantity) throws InvocationTargetException, NoSuchMethodException
+//            , InstantiationException, IllegalAccessException {
+//        if(quantity <= 0){
+//            throw new IllegalArgumentException(" количество животных должно быть больше 0");
+//        }
+//        if (quantity > island.length * island[0].length){
+//            throw new IllegalArgumentException("недопустимая величина");
+//        }
+//        for (int i = 0; i < quantity; i++) {
+//            Random random = new Random();
+//            int r = random.nextInt(island.length);
+//            int c = random.nextInt(island[0].length);
+//            if (island[r][c] == null){
+//              addAnimal(r, c, factory.createAnimal() ) ;
+//            }
+//        }
+//
+//    }
+
+    public int[] findFreeIndex(){
+
+        for (int i = 0; i < island.length; i++) {
+            for (int j = 0; j < island[0].length; j++) {
+
+               if (island[i][j] == null){
+                   return  new int[]{i, j};
+                }
             }
         }
-
+        return null;
     }
-
-
 
     public void addAnimal(int row, int col, Animal animal) {
         island[row][col] = animal;
@@ -101,8 +119,8 @@ public class Island {
         if (coordinates != null ) {
             int row = coordinates[0];
             int col = coordinates[1];
-            int offsetRow = random.nextInt(-1, 2);
-            int offsetCol = random.nextInt(-1, 2);
+            int offsetRow = row + 1;
+            int offsetCol = col + 1;
             island[offsetRow][offsetCol] =  animal ;
             island[row][col] = null;
     }

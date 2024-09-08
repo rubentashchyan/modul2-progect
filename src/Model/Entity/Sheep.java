@@ -1,4 +1,8 @@
-public class Sheep extends Herbivore{
+package Model.Entity;
+
+import Model.Entity.Herbivore;
+
+public class Sheep extends Herbivore {
     public Sheep(int foodLevel, int health) {
         super(40, 40);
     }

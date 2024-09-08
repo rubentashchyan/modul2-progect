@@ -1,4 +1,8 @@
-public class Wolf extends Predator{
+package Model.Entity;
+
+import Model.Entity.Predator;
+
+public class Wolf extends Predator {
     public Wolf(int foodLevel, int health) {
         super(60, 60);
     }

@@ -1,3 +1,8 @@
+package Model.Entity;
+
+import Interfaces.Eatable;
+import Model.Entity.Animal;
+
 public  class Predator extends Animal implements Eatable {
     public Predator(int foodLevel, int health) {
         super(foodLevel, health);

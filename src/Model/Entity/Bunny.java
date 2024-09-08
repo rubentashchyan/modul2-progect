@@ -1,4 +1,6 @@
-public class Bunny extends Herbivore{
+package Model.Entity;
+
+public class Bunny extends Herbivore {
     public Bunny(int foodLevel, int health) {
         super(15, 15);
     }

@@ -1,4 +1,6 @@
-public class Fox  extends Predator{
+package Model.Entity;
+
+public class Fox  extends Predator {
     public Fox(int foodLevel, int health) {
         super(40, 40);
     }

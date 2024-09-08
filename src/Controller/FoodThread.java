@@ -1,3 +1,11 @@
+package Controller;
+
+import Model.Entity.Animal;
+import Repository.Island;
+import Service.AnimalService;
+import Interfaces.Entity;
+
+
 public class FoodThread implements Runnable{
     private AnimalService service = new AnimalService();
     private Island island;

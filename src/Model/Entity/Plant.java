@@ -1,4 +1,7 @@
+package Model.Entity;
 
+import Interfaces.Eatable;
+import Interfaces.Entity;
 
 public class Plant implements Eatable, Entity {
     private int foodLevel;
